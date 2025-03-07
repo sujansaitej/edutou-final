@@ -147,7 +147,7 @@ const Home = () => {
             Join thousands of students who have accelerated their careers with EDUTOU's innovative learning approach.
           </p>
           <Link 
-            to="/contact" 
+            to="/enroll" 
             className="inline-flex items-center px-8 py-3 bg-white text-indigo-900 hover:bg-indigo-100 rounded-lg font-medium transition-colors"
           >
             Enroll Now
