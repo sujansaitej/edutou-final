@@ -15,9 +15,37 @@ const Courses = () => {
       featured: true,
       image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80'
     },
-   
+    {
+      id: 'data-science-foundation',
+      title: 'Data Science Foundation: 7-Day Data Analytics Workshop',
+      description: 'Learn the fundamentals of data science, analytics, and visualization using modern tools and techniques.',
+      icon: <Brain className="h-6 w-6" />,
+      duration: '7 days',
+      level: 'Beginner to Intermediate',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
+    },
+    {
+      id: 'machine-learning-foundation',
+      title: 'Machine Learning Foundation: 7-Day AI Workshop',
+      description: 'Dive into the world of machine learning and artificial intelligence with hands-on projects and real-world applications.',
+      icon: <Brain className="h-6 w-6" />,
+      duration: '7 days',
+      level: 'Beginner to Intermediate',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
+    },
+    {
+      id: 'app-development-foundation',
+      title: 'App Development Foundation: 7-Day Mobile Dev Workshop',
+      description: 'Build mobile applications from scratch and learn the essential concepts of modern app development.',
+      icon: <Code className="h-6 w-6" />,
+      duration: '7 days',
+      level: 'Beginner to Intermediate',
+      featured: false,
+      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80'
+    },
   ];
-
   return (
     <div>
       {/* Hero Section */}
@@ -76,14 +104,20 @@ const Courses = () => {
                         <span className="text-gray-700">Certificate Included</span>
                       </div>
                     </div>
-                    <Link 
-  to="/enroll" 
-  className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 inline-block mt-4"
->
-  Enroll Now
-</Link>
-                  </div>
-                </div>
+                                    <div className="flex items-center gap-4 mt-4">
+                  <Link 
+                    to="/enroll" 
+                    className="bg-gray-300 text-gray-500 px-4 py-2 rounded-md inline-block line-through cursor-not-allowed"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Enroll Now
+                  </Link>
+                  <span className="text-red-600 font-semibold">
+                    Slots Full
+                  </span>
+</div>
+                                  </div>
+                                </div>
               </div>
             ))}
           </div>

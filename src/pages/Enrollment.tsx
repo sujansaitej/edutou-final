@@ -25,8 +25,8 @@ const Enrollment = () => {
         </div>
         <h1 className="text-4xl font-bold mb-4">Full Stack Foundation Workshop</h1>
         <div className="text-6xl font-bold mb-4">
-          <span className="text-2xl line-through text-gray-300">₹999</span>
-          <span className="ml-4">₹100</span>
+     
+         
         </div>
         <div className="flex justify-center gap-8 mb-6">
           <div className="flex items-center gap-2">
@@ -41,6 +41,9 @@ const Enrollment = () => {
             <Users className="h-5 w-5" />
             <span>Limited Seats</span>
           </div>
+        </div>
+        <div className="text-6xl font-bold mb-4">
+          <span>₹100</span>
         </div>
         <div className="text-lg">
           <Zap className="inline h-5 w-5 mr-2" />
@@ -95,14 +98,14 @@ const Enrollment = () => {
               onChange={(e) => setFormData({...formData, college: e.target.value})}
             />
           </div>
-
           <button
             type="submit"
             className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
           >
-            <img src="/phonepe-logo.png" alt="PhonePe" className="h-6 w-6" />
+            <img src="\public\logo\phonepe.png" alt="PhonePe" className="h-6 w-6" />
             Pay ₹100 with PhonePe
           </button>
+          .
         </form>
       </div>
 

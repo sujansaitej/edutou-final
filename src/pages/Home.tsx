@@ -18,12 +18,13 @@ const Home = () => {
                 No outdated curriculums. No meaningless certifications.
                 Just fluid, evolving skills that make you unstoppable.
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link to="/courses" className="px-8 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg font-medium text-center transition-colors">
-                  Explore Courses
-                </Link>
-                <Link to="/about" className="px-8 py-3 bg-transparent border border-indigo-300 hover:bg-indigo-800 rounded-lg font-medium text-center transition-colors">
-                  Learn More
+              <div className="mt-8">
+                <Link
+                  to="/enroll"
+                  className="bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors inline-flex items-center"
+                >
+                  Register Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
             </div>
