@@ -105,16 +105,31 @@ const Courses = () => {
                       </div>
                     </div>
                                     <div className="flex items-center gap-4 mt-4">
-                  <Link 
-                    to="/enroll" 
-                    className="bg-gray-300 text-gray-500 px-4 py-2 rounded-md inline-block line-through cursor-not-allowed"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Enroll Now
-                  </Link>
-                  <span className="text-red-600 font-semibold">
-                    Slots Full
-                  </span>
+                                    <div className="flex items-center gap-4 mt-4">
+  {course.id === 'full-stack-foundation' ? (
+    <Link 
+      to="/enroll" 
+      className="bg-indigo-600 text-white px-4 py-2 rounded-md inline-block hover:bg-indigo-700"
+    >
+      Enroll Now
+    </Link>
+  ) : (
+    <>
+      <Link 
+        to="/enroll" 
+        className="bg-gray-300 text-gray-500 px-4 py-2 rounded-md inline-block line-through cursor-not-allowed"
+        onClick={(e) => e.preventDefault()}
+      >
+        Enroll Now
+      </Link>
+      <span className="text-red-600 font-semibold">
+        Slots Full
+      </span>
+    </>
+  )}
+</div>
+
+                  
 </div>
                                   </div>
                                 </div>
