@@ -65,18 +65,7 @@ const Enrollment = () => {
               ))}
             </div>
           </div>
-          {/* Technologies Covered */}
-          <div className="bg-white rounded-lg shadow-xl p-6 mb-8">
-            <h3 className="text-xl font-bold mb-4">Technologies You'll Learn</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {['React', 'Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'Git'].map((tech) => (
-                <div key={tech} className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>{tech}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
 
         {/* Right Column - Enrollment Form */}
