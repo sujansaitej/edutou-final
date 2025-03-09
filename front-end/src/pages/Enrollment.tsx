@@ -18,11 +18,31 @@ const Enrollment = () => {
     { icon: <Star className="h-6 w-6" />, text: "1 Year of Community Support" },
     { icon: <CheckCircle className="h-6 w-6" />, text: "Limited slots available, book now and secure your spots" },
   ];
+  
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // PhonePe payment integration logic
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/enroll', { 
+
+              method: 'POcdST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+          });
+  
+          const data = await response.json();
+          if (response.ok) {
+              alert("Enrollment successful!");
+              setFormData({ name: '', email: '', phone: '', college: '', course: 'Full Stack Foundation', referralCode: '' });
+          } else {
+              alert(`Error: ${data.error || "Something went wrong"}`);
+          }
+      } catch (error) {
+          console.error("Error submitting form:", error);
+          alert("Something went wrong. Please try again.");
+      }
   };
+  
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
