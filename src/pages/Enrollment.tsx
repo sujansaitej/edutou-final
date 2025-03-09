@@ -146,7 +146,7 @@ const Enrollment = () => {
               type="submit"
               className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
             >
-              <img src="/public/logo/phonepe.png" alt="PhonePe" className="h-6 w-6" />
+             
               Pay ₹100 
             </button>
 
