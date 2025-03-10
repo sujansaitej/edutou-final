@@ -121,14 +121,8 @@ const Enrollment = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Referral Code (Optional)</label>
-              <input
-                type="text"
-                placeholder="Enter referral code if any"
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
-                value={formData.referralCode}
-                onChange={(e) => setFormData({ ...formData, referralCode: e.target.value })}
-              />
+          
+              
             </div>
 
             <button
