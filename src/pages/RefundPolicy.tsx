@@ -15,7 +15,7 @@ const RefundPolicy = () => {
         
         <section>
           <h2 className="text-xl font-semibold mb-3">Cancellation</h2>
-          <p>If the workshop is canceled by the organizers, participants will be eligible for a full refund.</p>
+          <p>If the workshop is canceled by the organizers, participants will be eligible for a full refund, it will be processed/credited within 7-10 business days.</p>
           <p>If a participant is unable to attend due to personal reasons, no refund or rescheduling will be offered.</p>
         </section>
         
