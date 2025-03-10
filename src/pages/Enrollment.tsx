@@ -1,53 +1,76 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Zap, Clock, Calendar, Users, CheckCircle, BookOpen, Trophy, Star } from 'lucide-react';
+import React, { useState } from "react";
+import { Clock, Calendar, Users, CheckCircle, BookOpen, Trophy, Star } from "lucide-react";
 
 const Enrollment = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    college: '',
-    course: 'Full Stack Foundation',
-    referralCode: ''
+    name: "",
+    email: "",
+    phone: "",
+    college: "",
+    course: "Full Stack Foundation",
+    referralCode: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
   const benefits = [
-    { icon: <BookOpen className="h-6 w-6" />, text: "Live  Classes For all 7 days" },,
+    { icon: <BookOpen className="h-6 w-6" />, text: "Live Classes For all 7 days" },
     { icon: <Trophy className="h-6 w-6" />, text: "Certificate of Completion with online verification" },
     { icon: <Star className="h-6 w-6" />, text: "1 Year of Community Support" },
     { icon: <CheckCircle className="h-6 w-6" />, text: "Limited slots available, book now and secure your spots" },
   ];
-  
 
-  const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch('http://127.0.0.1:5000/api/enroll', { 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setMessage("");
 
-              method: 'POcdST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formData)
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      setLoading(true);
+    
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        setLoading(true);
+      
+const scriptURL = "https://script.google.com/macros/s/AKfycbybbAbN-fmidEWsIM8zzswtEXwQhfC9BOzdMlfOVHGaqZJ_Md6a8oojtIpKQ6w5r8Re/exec"; // Replace with your script URL
+      
+        try {
+          const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
           });
-  
+      
           const data = await response.json();
-          if (response.ok) {
-              alert("Enrollment successful!");
-              setFormData({ name: '', email: '', phone: '', college: '', course: 'Full Stack Foundation', referralCode: '' });
+      
+          if (data.result === "success") {
+            setMessage("Form submitted successfully!");
+            setFormData({
+              name: "",
+              email: "",
+              phone: "",
+              college: "",
+              course: "Full Stack Foundation",
+              referralCode: "",
+            });
           } else {
-              alert(`Error: ${data.error || "Something went wrong"}`);
+            setMessage("Error submitting form. Please try again.");
           }
-      } catch (error) {
-          console.error("Error submitting form:", error);
-          alert("Something went wrong. Please try again.");
-      }
-  };
-  
+        } catch (error) {
+          setMessage("Error submitting form. Please try again.");
+        }
+      
+        setLoading(false);
+      };
+      
+    
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left Column - Course Details */}
+        {/* Left - Course Details */}
         <div>
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 mb-8 text-white">
             <div className="animate-pulse inline-block bg-yellow-400 text-black font-bold px-4 py-1 rounded-full mb-4">
@@ -68,11 +91,10 @@ const Enrollment = () => {
                 <span>Limited Seats</span>
               </div>
             </div>
-            
+
             <div className="mb-6">
               <div className="text-6xl font-bold flex items-baseline">
-                ₹100
-                <span className="text-lg ml-2">for complete access</span>
+                ₹100 <span className="text-lg ml-2">for complete access</span>
               </div>
             </div>
 
@@ -85,10 +107,9 @@ const Enrollment = () => {
               ))}
             </div>
           </div>
-          
         </div>
 
-        {/* Right Column - Enrollment Form */}
+        {/* Right - Enrollment Form */}
         <div className="bg-white rounded-lg shadow-xl p-8">
           <h2 className="text-2xl font-bold mb-6">Secure Your Seat Now</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -100,7 +121,7 @@ const Enrollment = () => {
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
             </div>
 
@@ -112,7 +133,7 @@ const Enrollment = () => {
                 placeholder="your@email.com"
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
 
@@ -124,7 +145,7 @@ const Enrollment = () => {
                 placeholder="Your WhatsApp number"
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
             </div>
 
@@ -136,7 +157,7 @@ const Enrollment = () => {
                 placeholder="Your college name"
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.college}
-                onChange={(e) => setFormData({...formData, college: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, college: e.target.value })}
               />
             </div>
 
@@ -147,17 +168,19 @@ const Enrollment = () => {
                 placeholder="Enter referral code if any"
                 className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                 value={formData.referralCode}
-                onChange={(e) => setFormData({...formData, referralCode: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, referralCode: e.target.value })}
               />
             </div>
 
             <button
               type="submit"
               className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
+              disabled={loading}
             >
-             
-              Pay ₹100 
+              {loading ? "Processing..." : "Pay ₹100"}
             </button>
+
+            {message && <p className="text-center text-sm text-gray-600 mt-2">{message}</p>}
 
             <p className="text-center text-sm text-gray-600">
               By enrolling, you agree to our Terms of Service and Privacy Policy
