@@ -133,7 +133,7 @@ const CourseDetail = () => {
                     <Clock className="h-5 w-5 text-indigo-600 mr-3" />
                     <div>
                       <p className="font-medium text-gray-900">Duration</p>
-                      <p className="text-gray-600">7 days (4 hours/day)</p>
+                      <p className="text-gray-600">7 days (1:00-1:30 hours/day)</p>
                     </div>
                   </div>
                   
