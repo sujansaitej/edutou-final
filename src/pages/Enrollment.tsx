@@ -21,41 +21,9 @@ const Enrollment = () => {
     { icon: <CheckCircle className="h-6 w-6" />, text: "Limited slots available, book now and secure your spots" },
   ];
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    setLoading(true);
-    setMessage("");
-
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbybbAbN-fmidEWsIM8zzswtEXwQhfC9BOzdMlfOVHGaqZJ_Md6a8oojtIpKQ6w5r8Re/exec";
-
-    try {
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (data.result === "success") {
-        setMessage("Form submitted successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          college: "",
-          course: "Full Stack Foundation",
-          referralCode: "",
-        });
-      } else {
-        setMessage("Error submitting form. Please try again.");
-      }
-    } catch (error) {
-      setMessage("Error submitting form. Please try again.");
-    }
-
-    setLoading(false);
+    window.location.href = "https://forms.gle/9qquW2zCkJadoTRD9";
   };
 
   return (
@@ -168,7 +136,7 @@ const Enrollment = () => {
               className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
               disabled={loading}
             >
-              {loading ? "Processing..." : "Pay ₹100"}
+              {loading ? "Processing..." : "Enroll Now & Next Step"}
             </button>
 
             {message && <p className="text-center text-sm text-gray-600 mt-2">{message}</p>}
