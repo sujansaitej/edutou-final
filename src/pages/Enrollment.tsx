@@ -21,51 +21,42 @@ const Enrollment = () => {
     { icon: <CheckCircle className="h-6 w-6" />, text: "Limited slots available, book now and secure your spots" },
   ];
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     setMessage("");
 
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-      setLoading(true);
-    
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-      
-const scriptURL = "https://script.google.com/macros/s/AKfycbybbAbN-fmidEWsIM8zzswtEXwQhfC9BOzdMlfOVHGaqZJ_Md6a8oojtIpKQ6w5r8Re/exec"; // Replace with your script URL
-      
-        try {
-          const response = await fetch(scriptURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
-      
-          const data = await response.json();
-      
-          if (data.result === "success") {
-            setMessage("Form submitted successfully!");
-            setFormData({
-              name: "",
-              email: "",
-              phone: "",
-              college: "",
-              course: "Full Stack Foundation",
-              referralCode: "",
-            });
-          } else {
-            setMessage("Error submitting form. Please try again.");
-          }
-        } catch (error) {
-          setMessage("Error submitting form. Please try again.");
-        }
-      
-        setLoading(false);
-      };
-      
-    
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbybbAbN-fmidEWsIM8zzswtEXwQhfC9BOzdMlfOVHGaqZJ_Md6a8oojtIpKQ6w5r8Re/exec";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.result === "success") {
+        setMessage("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          college: "",
+          course: "Full Stack Foundation",
+          referralCode: "",
+        });
+      } else {
+        setMessage("Error submitting form. Please try again.");
+      }
+    } catch (error) {
+      setMessage("Error submitting form. Please try again.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
