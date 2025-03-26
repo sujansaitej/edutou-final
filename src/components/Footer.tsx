@@ -16,20 +16,7 @@ const Footer = () => {
             <p className="text-white text-sm mb-2">
               Redefining Education with AI-driven learning.
             </p>
-            <div className="flex space-x-3">
-              <a href="#" className="text-white hover:text-indigo-300">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" className="text-white hover:text-indigo-300">
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a href="#" className="text-white hover:text-indigo-300">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" className="text-white hover:text-indigo-300">
-                <Linkedin className="h-4 w-4" />
-              </a>
-            </div>
+            
           </div>
 
           {/* Quick Links Section */}
