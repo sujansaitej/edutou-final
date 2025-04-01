@@ -12,6 +12,7 @@ interface Student {
 const studentData = [
     { id: 'EDUFSF0101001', name: 'Rojaveni' },
     { id: 'EDUFSF0101002', name: 'K.Priyadharshini' },
+    { id: 'EDUFSF0101222', name: 'A Gibbson Arputhara'},
     { id: 'EDUFSF0101003', name: 'Santhanalakshmi' },
     { id: 'EDUFSF0101004', name: 'Santhosh' },
     { id: 'EDUFSF0101005', name: 'S.Bramhani' },
@@ -228,7 +229,8 @@ const studentData = [
     { id: 'EDUFSF0101215', name: 'Vansh Mehta' },
     { id: 'EDUFSF0101216', name: 'Hariharan.g' },
     { id: 'EDUFSF0101217', name: 'S.Tharunkamalesh' },
-    { id: 'EDUFSF0101218', name: 'Saktheeswaran' }
+    { id: 'EDUFSF0101218', name: 'Saktheeswaran' },
+    
   ];
 // Course options
 const courseOptions = [
