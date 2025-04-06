@@ -24,6 +24,7 @@ const studentData = [
     { id: 'EDUFSF0101011', name: 'Navyasree.k' },
     { id: 'EDUFSF0101012', name: 'Raghini' },
     { id: 'EDUFSF0101013', name: 'Sanjana L' },
+    { id: 'EDUFSF0101221', name: 'Poornima S' },
     { id: 'EDUFSF0101014', name: 'RO MU Jauhar' },
     { id: 'EDUFSF0101219', name: 'R. Rachitha' },
     { id: 'EDUFSF0101015', name: 'Thamizhamudhu G' },
