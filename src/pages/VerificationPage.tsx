@@ -13,6 +13,7 @@ const studentData = [
     { id: 'EDUFSF0101001', name: 'Rojaveni' },
     { id: 'EDUFSF0101002', name: 'K.Priyadharshini' },
     { id: 'EDUFSF0101222', name: 'A Gibbson Arputhara'},
+    { id: 'EDUFSF0101223', name: 'Dinesh Kumar V'},
     { id: 'EDUFSF0101003', name: 'Santhanalakshmi' },
     { id: 'EDUFSF0101004', name: 'Santhosh' },
     { id: 'EDUFSF0101005', name: 'S.Bramhani' },
