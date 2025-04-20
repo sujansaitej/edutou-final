@@ -35,6 +35,7 @@ const App: React.FC = () => {
             <Route path="/refund" element={<RefundPolicy />} />
             <Route path="/enroll" element={<Enrollment />} />
             <Route path="/webinars" element={<Webinar />} />
+
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/certifications" element={<VerificationPage />} />
             <Route path="*" element={<NotFound />} />
